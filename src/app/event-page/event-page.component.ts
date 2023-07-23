@@ -36,8 +36,10 @@ export class EventPageComponent {
     this.httpClient.get("/api/events/" + eventid).subscribe((response) => {
         console.log(response)
         this.event = response as Event;//convertim respons in Event
-        this.event.startDate = new Date(this.event.startDate);
-        this.event.endDate = new Date(this.event.endDate);
+        if (this.event.startDate != null)
+          this.event.startDate = new Date(this.event.startDate!);
+        if (this.event.endDate != null)
+          this.event.endDate = new Date(this.event.endDate!);
       },
       (error) => {
         console.log(error);

@@ -4,6 +4,7 @@
 <p> name:{{event.name}}</p>
 <p> description:{{event.description}}</p>
 <p> location:{{event.location}}</p>
-<p> startDate:{{event.startDate.toLocaleDateString("ro-RO")}}</p>
-<p> endDate:{{event.endDate.toLocaleDateString("ro-RO")}}</p>
+<p> startDate:{{event.startDate?.toLocaleDateString("ro-RO")}}</p>
+<p> endDate:{{event.endDate?.toLocaleDateString("ro-RO")}}</p>
 
+ se pune semnul intrebarii dupa event.startDate sau endDate pt a ignora faptul ca poate veni ca null la un moment dat ! ! !
