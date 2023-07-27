@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Event} from 'src/app/model/event';
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
+import {EventService} from "../event.service";
 
 @Component({
   selector: 'app-event-page',
@@ -19,23 +20,26 @@ export class EventPageComponent {
     null,
     null);
 
-  httpClient: HttpClient;
+  //httpClient: HttpClient;
   route: ActivatedRoute;
 
-  constructor(httpClient: HttpClient, route: ActivatedRoute, private router: Router) {
+  constructor(private eventService:EventService, route: ActivatedRoute, private router: Router) {
     // Private - ne scapa de necesitatea de la declara si asigna cu this.x in constructor)
-    this.httpClient = httpClient;
+    //this.httpClient = httpClient;
     this.route = route;
   }
 
   ngOnInit() {
 
-    const eventid = this.route.snapshot.paramMap.get("id"); //sintaxa pe a accesa parametrul id din cadrul url-ului
+    const eventid = this.route.snapshot.params["id"]; //sintaxa pe a accesa parametrul id din cadrul url-ului
 
     //accesam evenimentul cu id-ul 1 - response e obiectul pe care-l primim noi
-    this.httpClient.get("/api/events/" + eventid).subscribe((response) => {
+    //this.httpClient.get("/api/events/" + eventid).subscribe((response) => {
+    this.eventService.readEvent(eventid).subscribe((response)=> {
+
+
         console.log(response)
-        this.event = response as Event;//convertim respons in Event
+        this.event = response as Event;//convertim response in Event
         if (this.event.startDate != null)
           this.event.startDate = new Date(this.event.startDate!);
         if (this.event.endDate != null)

@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { EventPageComponent } from './event-page/event-page.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { CategoryPageComponent } from './category-page/category-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    CategoryPageComponent
   ],
   imports: [
     BrowserModule,
