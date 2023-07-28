@@ -28,9 +28,13 @@ export class CategoryPageComponent {
 
     this.categoryService.readEvent(categoryid).subscribe((response)=>{
       console.log(response)
-      this.category=response as Category
-    })
-
-  }
-
+      this.category=response as Category;
+      },
+      (error) => {
+        console.log(error);
+        if (error.error == "There is no event with id: " + categoryid) {
+          this.router.navigate(["/Page-not-found"])
+        }
+      });
+  };
 }
