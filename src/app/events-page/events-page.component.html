@@ -2,10 +2,14 @@
   <h1>
     Events
   </h1>
+  <button mat-fab color="primary" routerLink="/new-event">
+    <mat-icon>add</mat-icon>
+  </button>
 
-  <div class ="event-card-container">
+
+  <div class="event-card-container">
     <app-event-card
-      *ngFor="let e of events" [event]="e" (click)="navigateToEvent(e)"> </app-event-card>
+      *ngFor="let e of events" [event]="e" (click)="navigateToEvent(e)"></app-event-card>
 
 
   </div>

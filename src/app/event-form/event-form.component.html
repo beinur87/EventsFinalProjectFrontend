@@ -1,0 +1,26 @@
+<div>
+    <form
+      [formGroup]="eventForm">
+
+      <mat-form-field>
+        <mat-label>Event name</mat-label>
+        <input matInput formControlName="nameInput">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Event description
+          <textarea matInput formControlName="descriptionInput">
+          </textarea>
+        </mat-label>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Event location
+          <input matInput formControlName = "locationInput">
+        </mat-label>
+      </mat-form-field>
+
+    </form>
+</div>
+
+

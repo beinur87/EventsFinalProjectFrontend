@@ -12,6 +12,12 @@ import { CategoryPageComponent } from './category-page/category-page.component';
 import { HeaderComponent } from './header/header.component';
 import { EventsPageComponent } from './events-page/events-page.component';
 import { EventCardComponent } from './event-card/event-card.component';
+import { NewEventPageComponent } from './new-event-page/new-event-page.component';
+import { EventFormComponent } from './event-form/event-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -23,6 +29,8 @@ import { EventCardComponent } from './event-card/event-card.component';
     HeaderComponent,
     EventsPageComponent,
     EventCardComponent,
+    NewEventPageComponent,
+    EventFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,11 @@ import { EventCardComponent } from './event-card/event-card.component';
     HttpClientModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
