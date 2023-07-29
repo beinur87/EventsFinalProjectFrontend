@@ -1,0 +1,19 @@
+.header {
+  background-color: darkcyan;
+  display: flex;
+  justify-content: space-between;
+  /*padding-left: 20px;*/
+  /*padding-right:20px;*/
+  /*padding-top:5px;*/
+  /*padding-bottom:5px;*/
+  padding: 5px 20px 5px 20px;
+}
+
+/*.header - este o clasa de CSS*/
+/*header - este doar un element html*/
+/*# - este un id */
+
+
+button{
+  margin: 5px;
+}

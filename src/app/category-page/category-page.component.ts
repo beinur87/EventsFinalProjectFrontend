@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {Category} from "../model/category";
+import {Component } from '@angular/core';
+import {Category} from "src/app/model/category";
 import {CategoryService} from "../category.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -26,11 +26,13 @@ export class CategoryPageComponent {
     const categoryid = this.route.snapshot.params["id"];
       //sintaxa pe a accesa parametrul id din cadrul url-ului
 
-    this.categoryService.readEvent(categoryid).subscribe((response)=>{
+    this.categoryService.readEvent(categoryid).subscribe((response)=>
+      {
       console.log(response)
       this.category=response as Category;
       },
-      (error) => {
+      (error) =>
+      {
         console.log(error);
         if (error.error == "There is no event with id: " + categoryid) {
           this.router.navigate(["/Page-not-found"])

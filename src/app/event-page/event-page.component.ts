@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {Event} from 'src/app/model/event';
-import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 import {EventService} from "../event.service";
 

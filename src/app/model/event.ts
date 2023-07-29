@@ -13,6 +13,7 @@ public class Event {
  */
 
 export class Event{
+
   id:number | null;
   name:string|null;
   description:string|null;
