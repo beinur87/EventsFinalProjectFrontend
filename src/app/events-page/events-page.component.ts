@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class EventsPageComponent {
 
+    events: Event[] = []
+
+    protected readonly Event = Event;
 }

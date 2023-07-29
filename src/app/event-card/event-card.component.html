@@ -1,1 +1,23 @@
-<p>event-card works!</p>
+<mat-card class="event-card">
+  <mat-card-header>
+    <mat-card-title>
+      {{event.name}}
+    </mat-card-title>
+
+    <mat-card-subtitle>
+      {{event.location}}
+    </mat-card-subtitle>
+
+  </mat-card-header>
+
+  <img mat-card-image
+       class="event-card-img"
+       src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+       alt="Photo of a Shiba Inu">
+
+  <mat-card-content class="event-card-content">
+    {{event.description}}
+  </mat-card-content>
+
+
+</mat-card>

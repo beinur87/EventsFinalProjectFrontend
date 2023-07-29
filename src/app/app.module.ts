@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventPageComponent } from './event-page/event-page.component';
@@ -12,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { EventsPageComponent } from './events-page/events-page.component';
 import { EventCardComponent } from './event-card/event-card.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +22,15 @@ import { EventCardComponent } from './event-card/event-card.component';
     CategoryPageComponent,
     HeaderComponent,
     EventsPageComponent,
-    EventCardComponent
+    EventCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

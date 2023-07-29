@@ -1,0 +1,16 @@
+.event-card {
+  width: 300px;
+  margin-top: 30px;
+}
+
+.event-card-img {
+  height: 250px;
+  object-fit: contain;
+}
+
+.event-card-content {
+  padding-top: 20px;
+  height: 100px;
+  overflow: hidden;
+}
+
