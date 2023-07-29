@@ -4,7 +4,10 @@
   </h1>
 
   <div class ="event-card-container">
-    <app-event-card *ngFor="let i of[1,2,3,4,5]"> </app-event-card>
+    <app-event-card
+      *ngFor="let e of events" [event]="e" (click)="navigateToEvent(e)"> </app-event-card>
+
+
   </div>
 
 </div>

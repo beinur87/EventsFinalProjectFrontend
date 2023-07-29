@@ -1,6 +1,7 @@
 .event-card {
   width: 300px;
-  margin-top: 30px;
+  margin: 30px 15px 0 15px;
+  cursor:pointer;
 }
 
 .event-card-img {
