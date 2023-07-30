@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Event} from 'src/app/model/event'
 import {Router} from "@angular/router";
+import {EventService} from "../event.service";
 
 @Component({
   selector: 'app-events-page',
@@ -12,11 +13,10 @@ export class EventsPageComponent {
 
     events: Event[] = [];
 
-    constructor (private httpClient:HttpClient,
-                 private router:Router){}
+    constructor (private eventService:EventService, private router:Router){}
 
   ngOnInit(){
-      this.httpClient.get("api/events").subscribe(
+      this.eventService.readEvents().subscribe(
         (response)=>{
           console.log(response);
           this.events=response as Event [];
