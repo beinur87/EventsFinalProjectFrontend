@@ -3,6 +3,7 @@ import {Event} from "src/app/model/event";
 import {FormControl, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {EventService} from "../event.service";
 
 @Component({
   selector: 'app-event-form',
@@ -12,9 +13,9 @@ import {Router} from "@angular/router";
 export class EventFormComponent {
 
 
-  constructor (private httpClient:HttpClient,
+  constructor (private eventService:EventService,
                private router:Router){
-    this.httpClient=httpClient;
+
   }
 
   @Input()
@@ -55,14 +56,14 @@ export class EventFormComponent {
     this.populateEventFromForm();
 
     if (this.event.id == null) {
-      this.httpClient.post('/api/events', this.event)
+      this.eventService.saveEvent(this.event)
         .subscribe((response) => {
           var savedEvent = response as Event;
           this.router.navigate(['/events/' + savedEvent.id]);
         });
     }
     if(this.event.id != null) {
-      this.httpClient.put('/api/events/' + this.event.id, this.event)
+     this.eventService.updateEvent(this.event.id,this.event)
         .subscribe((response) => {
           this.router.navigate(['/events/' + this.event.id]);
         });

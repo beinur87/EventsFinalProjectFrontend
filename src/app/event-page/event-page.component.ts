@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Event} from 'src/app/model/event';
 import {ActivatedRoute, Router} from "@angular/router";
 import {EventService} from "../event.service";
+import {getXHRResponse} from "rxjs/internal/ajax/getXHRResponse";
 
 @Component({
   selector: 'app-event-page',
@@ -41,7 +42,6 @@ export class EventPageComponent {
     //this.httpClient.get("/api/events/" + eventid).subscribe((response) => {
     this.eventService.readEvent(eventId).subscribe((response)=> {
 
-
         console.log(response)
         this.event = response as Event;//convertim response in Event
         if (this.event.startDate != null)
@@ -56,6 +56,22 @@ export class EventPageComponent {
         }
       });
   };
+
+  deleteEvent(eventId:any){
+
+    this.eventService.deleteEvent(eventId).subscribe(
+      (response)=>{
+
+        console.log("Event deleted!");
+
+        this.router.navigate(["/events"]);
+
+      },error =>
+        console.log(error)
+    );
+
+  }
+
 }
 
   // .subscribe(success, error) - subscribe-ul are 2 parametri unul in caz de success si unu in caz de fail!

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Event} from "../model/event";
+import {EventService} from "../event.service";
 
 @Component({
   selector: 'app-update-event-page',
@@ -14,11 +15,11 @@ export class UpdateEventPageComponent {
 
   //http://localhost4200/update-event/5
 
-  constructor (private activeRoute:ActivatedRoute, private httpClient:HttpClient){}
+  constructor (private eventService: EventService,private activeRoute:ActivatedRoute, private httpClient:HttpClient){}
 
     ngOnInit(){
-      var eventId=this.activeRoute.snapshot.paramMap.get('id');
-      this.httpClient.get("/api/events/"+ eventId).subscribe(
+      const eventId = this.activeRoute.snapshot.params["id"];
+      this.eventService.readEvent(eventId).subscribe(
         (response)=>{
           this.updateEvent=response as Event;
           if (this.updateEvent.startDate != null)

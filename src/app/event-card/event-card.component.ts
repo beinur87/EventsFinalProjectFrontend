@@ -16,7 +16,7 @@ export class EventCardComponent {
     location: "",
     startDate: null,
     endDate: null,
-    imgURL:null
+    imgURL:null,
   }
 
 }
