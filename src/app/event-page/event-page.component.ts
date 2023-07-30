@@ -17,7 +17,9 @@ export class EventPageComponent {
     null,
     null,
     null,
-    null);
+    null,
+  null)
+
 
   //httpClient: HttpClient;
   route: ActivatedRoute;

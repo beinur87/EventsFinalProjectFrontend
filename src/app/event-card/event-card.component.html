@@ -12,8 +12,8 @@
 
   <img mat-card-image
        class="event-card-img"
-       src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-       alt="Photo of a Shiba Inu">
+       src="{{event.imgURL?event.imgURL:'https://tinyurl.com/mvpk5u97'}}"
+       alt="Photo of the event!">
 
   <mat-card-content class="event-card-content">
     {{event.description}}

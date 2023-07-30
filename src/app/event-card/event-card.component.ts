@@ -15,7 +15,8 @@ export class EventCardComponent {
     description: "",
     location: "",
     startDate: null,
-    endDate: null
+    endDate: null,
+    imgURL:null
   }
 
 }

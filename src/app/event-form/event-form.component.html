@@ -1,26 +1,48 @@
 <div>
     <form
-      [formGroup]="eventForm">
+      [formGroup]="eventForm"(ngSubmit)="saveEvent()" class = "event-form">
 
       <mat-form-field>
         <mat-label>Event name</mat-label>
-        <input matInput formControlName="nameInput">
+        <input matInput formControlName="nameInput"/>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Event description
+        <mat-label>Event description</mat-label>
           <textarea matInput formControlName="descriptionInput">
           </textarea>
-        </mat-label>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Event location
-          <input matInput formControlName = "locationInput">
-        </mat-label>
+        <mat-label>Event location</mat-label>
+          <input matInput formControlName = "locationInput"/>
       </mat-form-field>
 
+      <mat-form-field>
+          <mat-label>Image URL</mat-label>
+          <input matInput formControlName="imgURLInput"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label> Event start date</mat-label>
+        <input matInput [matDatepicker] = "startDatePicker" formControlName="startDateInput"/>
+        <mat-datepicker #startDatePicker></mat-datepicker>
+        <mat-datepicker-toggle matIconSuffix [for]= "startDatePicker"></mat-datepicker-toggle>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label> Event start date</mat-label>
+        <input matInput [matDatepicker] = "endDatePicker" formControlName="endDateInput"/>
+        <mat-datepicker #endDatePicker></mat-datepicker>
+        <mat-datepicker-toggle matIconSuffix [for]= "endDatePicker"></mat-datepicker-toggle>
+      </mat-form-field>
+
+      <button mat-raised-button type="submit" color="primary">Save</button>
+
     </form>
+
 </div>
+
+
 
 
