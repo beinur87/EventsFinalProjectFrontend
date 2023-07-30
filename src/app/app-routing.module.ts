@@ -5,6 +5,7 @@ import {NotFoundPageComponent} from "./not-found-page/not-found-page.component";
 import {CategoryPageComponent} from "./category-page/category-page.component";
 import {EventsPageComponent} from "./events-page/events-page.component";
 import {NewEventPageComponent} from "./new-event-page/new-event-page.component";
+import {UpdateEventPageComponent} from "./update-event-page/update-event-page.component";
 
 const routes: Routes = [
   {path: "events/:id", component: EventPageComponent},
@@ -15,7 +16,9 @@ const routes: Routes = [
 
   {path: "events", component: EventsPageComponent},
 
-  {path: "new-event", component: NewEventPageComponent}
+  {path: "new-event", component: NewEventPageComponent},
+
+  {path: "update-event/:id", component: UpdateEventPageComponent}
 
 ];
 

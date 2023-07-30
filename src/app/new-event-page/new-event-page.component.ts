@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Event} from "../model/event";
 
 @Component({
   selector: 'app-new-event-page',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
 })
 export class NewEventPageComponent {
 
+  newEvent: Event = {
+    id: null,
+    name: "",
+    description: "",
+    location: "",
+    startDate: null,
+    endDate: null,
+    imgURL: null
+  }
 
 }

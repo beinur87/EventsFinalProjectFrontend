@@ -1,10 +1,20 @@
+<div>
+
 <h1>Event</h1>
 
+  <div>
+    <button mat-raised-button color="primary" [routerLink]="updateEventUrl">Update</button>
+    <button mat-raised-button color="warn">Delete</button>
+
+  </div>
+
+  <h2>
 <p>Id:{{event.id}}</p>
 <p> name:{{event.name}}</p>
 <p> description:{{event.description}}</p>
 <p> location:{{event.location}}</p>
 <p> startDate:{{event.startDate?.toLocaleDateString("ro-RO")}}</p>
 <p> endDate:{{event.endDate?.toLocaleDateString("ro-RO")}}</p>
+  </h2>
 
-
+</div>

@@ -1,6 +1,6 @@
 <div>
     <form
-      [formGroup]="eventForm"(ngSubmit)="saveEvent()" class = "event-form">
+      [formGroup]="eventForm"(ngSubmit)="saveOrUpdateEvent()" class = "event-form">
 
       <mat-form-field>
         <mat-label>Event name</mat-label>
@@ -37,7 +37,9 @@
         <mat-datepicker-toggle matIconSuffix [for]= "endDatePicker"></mat-datepicker-toggle>
       </mat-form-field>
 
-      <button mat-raised-button type="submit" color="primary">Save</button>
+      <button *ngIf="event.id==null" mat-raised-button type="submit" color="primary">Save</button>
+      <button *ngIf="event.id!=null" mat-raised-button type="submit" color="primary">Update</button>
+
 
     </form>
 

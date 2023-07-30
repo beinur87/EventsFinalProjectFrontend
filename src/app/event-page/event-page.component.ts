@@ -18,13 +18,14 @@ export class EventPageComponent {
     null,
     null,
     null,
-  null)
+    null)
 
+  updateEventUrl: string = "";
 
   //httpClient: HttpClient;
   route: ActivatedRoute;
 
-  constructor(private eventService:EventService, route: ActivatedRoute, private router: Router) {
+  constructor(private eventService: EventService, route: ActivatedRoute, private router: Router) {
     // Private - ne scapa de necesitatea de la declara si asigna cu this.x in constructor)
     //this.httpClient = httpClient;
     this.route = route;
@@ -32,11 +33,13 @@ export class EventPageComponent {
 
   ngOnInit() {
 
-    const eventid = this.route.snapshot.params["id"]; //sintaxa pe a accesa parametrul id din cadrul url-ului
+    const eventId = this.route.snapshot.params["id"]; //sintaxa pe a accesa parametrul id din cadrul url-ului
+
+    this.updateEventUrl="/update-event/"+eventId;
 
     //accesam evenimentul cu id-ul 1 - response e obiectul pe care-l primim noi
     //this.httpClient.get("/api/events/" + eventid).subscribe((response) => {
-    this.eventService.readEvent(eventid).subscribe((response)=> {
+    this.eventService.readEvent(eventId).subscribe((response)=> {
 
 
         console.log(response)
@@ -48,7 +51,7 @@ export class EventPageComponent {
       },
       (error) => {
         console.log(error);
-        if (error.error == "There is no event with id: " + eventid) {
+        if (error.error == "There is no event with id: " + eventId) {
           this.router.navigate(["/Page-not-found"])
         }
       });

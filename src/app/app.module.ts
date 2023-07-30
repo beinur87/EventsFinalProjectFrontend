@@ -21,6 +21,7 @@ import { EventFormComponent } from './event-form/event-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatNativeDateModule} from "@angular/material/core";
+import { UpdateEventPageComponent } from './update-event-page/update-event-page.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     EventsPageComponent,
     EventCardComponent,
     NewEventPageComponent,
-    EventFormComponent
+    EventFormComponent,
+    UpdateEventPageComponent
   ],
   imports: [
     BrowserModule,
