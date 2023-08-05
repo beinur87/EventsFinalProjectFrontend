@@ -21,9 +21,9 @@ import { EventFormComponent } from './event-form/event-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatNativeDateModule} from "@angular/material/core";
-import { UpdateEventPageComponent } from './update-event-page/update-event-page.component';
+import {UpdateEventPageComponent} from './update-event-page/update-event-page.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import {ConfirmationDialogComponent} from './confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({

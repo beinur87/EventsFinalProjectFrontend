@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
-import {Event} from "../model/event";
+
 
 @Component({
   selector: 'app-confirmation-dialog',

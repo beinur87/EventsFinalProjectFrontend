@@ -81,7 +81,6 @@ export class EventPageComponent {
       },error =>
         console.log(error)
     );
-
   }
 
 }
