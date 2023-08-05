@@ -22,6 +22,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatNativeDateModule} from "@angular/material/core";
 import { UpdateEventPageComponent } from './update-event-page/update-event-page.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { UpdateEventPageComponent } from './update-event-page/update-event-page.
     EventCardComponent,
     NewEventPageComponent,
     EventFormComponent,
-    UpdateEventPageComponent
+    UpdateEventPageComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { UpdateEventPageComponent } from './update-event-page/update-event-page.
     MatInputModule,
     BrowserAnimationsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

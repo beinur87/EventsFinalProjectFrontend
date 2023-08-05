@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 import {Event} from 'src/app/model/event';
 import {ActivatedRoute, Router} from "@angular/router";
 import {EventService} from "../event.service";
-import {getXHRResponse} from "rxjs/internal/ajax/getXHRResponse";
+import {MatDialog} from "@angular/material/dialog";
+import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
 
 @Component({
   selector: 'app-event-page',
@@ -26,10 +27,11 @@ export class EventPageComponent {
   //httpClient: HttpClient;
   route: ActivatedRoute;
 
-  constructor(private eventService: EventService, route: ActivatedRoute, private router: Router) {
+  constructor(private eventService: EventService, route: ActivatedRoute, private router: Router, private dialog:MatDialog) {
     // Private - ne scapa de necesitatea de la declara si asigna cu this.x in constructor)
     //this.httpClient = httpClient;
     this.route = route;
+
   }
 
   ngOnInit() {
@@ -57,7 +59,17 @@ export class EventPageComponent {
       });
   };
 
-  deleteEvent(eventId:any){
+  public openConfirmationDialog(){
+    var dialogRef = this.dialog.open(ConfirmationDialogComponent);
+    dialogRef.componentInstance.actionConfirmedEvent.subscribe(
+      actionConfirmed =>{
+        if(actionConfirmed ==true){
+          this.deleteEvent(this.event.id);
+        }
+      }
+  }
+
+  public deleteEvent(eventId:any){
 
     this.eventService.deleteEvent(eventId).subscribe(
       (response)=>{

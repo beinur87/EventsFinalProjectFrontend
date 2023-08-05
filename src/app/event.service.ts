@@ -31,7 +31,7 @@ baseURL="/api/events";
   }
 
   deleteEvent(eventId:number):Observable<any>{
-
+""
     return this.httpClient.delete<any>((`${this.baseURL}/${eventId}`));
 
   }
