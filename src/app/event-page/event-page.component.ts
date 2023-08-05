@@ -66,7 +66,7 @@ export class EventPageComponent {
         if(actionConfirmed ==true){
           this.deleteEvent(this.event.id);
         }
-      }
+      });
   }
 
   public deleteEvent(eventId:any){
